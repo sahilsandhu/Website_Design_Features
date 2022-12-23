@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Copon Widget on Website</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="coupon-card">
+                <img src="logo.png" alt="">
+                <h3>20% Flat off on all Accesorries with <br> in the city</h3>
+
+                <div class="coupon-row">
+                    <span id="cpn-code">STEALDEAL2012</span>
+                    <span id="cpn-btn">COPY CODE</span>
+                </div>
+                <p>Valid Till: 21 DEC, 2022</p>
+
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+            </div>
+
+        </div>
+        <script>
+            var cpnBtn = document.getElementById("cpn-btn");
+            var cpnCode = document.getElementById("cpn-code");
+            cpnBtn.onclick = function(){
+                navigator.clipboard.writeText(cpnCode.innerHTML);
+                cpnBtn.innerHTML = "COPIED"
+                setTimeout(function(){
+                    cpnBtn.innerHTML = "COPY CODE"
+                },3000)
+            }
+        </script>
+    </body>
+</html>
